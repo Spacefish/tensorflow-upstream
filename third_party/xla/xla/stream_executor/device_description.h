@@ -173,7 +173,7 @@ class RocmComputeCapability {
 
   bool navi21() const { return gfx_version() == "gfx1030"; }
 
-  bool navi31() const { return gfx_version() == "gfx1100"; }
+  bool navi31() const { return gfx_version() == "gfx1100" || gfx_version() == "gfx1101"; }
 
   bool has_nhwc_layout_support() const { return gfx9_mi100_or_later(); }
 
@@ -216,7 +216,7 @@ class RocmComputeCapability {
       "gfx90a",                       // MI200
       "gfx940",  "gfx941", "gfx942",  // MI300
       "gfx1030",                      // Navi21
-      "gfx1100"                       // Navi31
+      "gfx1100", "gfx1101"            // Navi31
   };
 };
 

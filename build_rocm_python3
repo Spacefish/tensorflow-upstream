@@ -30,7 +30,7 @@ shift "$((OPTIND-1))"
 nightly=true
 
 # First positional argument (if any) specifies the ROCM_INSTALL_DIR
-ROCM_INSTALL_DIR=/opt/rocm-6.0.0
+ROCM_INSTALL_DIR=/opt/rocm-6.0.2
 if [[ -n $1 ]]; then
     ROCM_INSTALL_DIR=$1
 fi
@@ -53,6 +53,7 @@ else
 fi
 
 PYTHON_VERSION=`python3 -c "import sys;print(f'{sys.version_info.major}.{sys.version_info.minor}')"`
+PYTHON_VERSION="3.11"
 export TF_PYTHON_VERSION=$PYTHON_VERSION
 # Explicitly define resource constraints on bazel to avoid overload on rocm-ci
 if [[ -n $restriction ]]; then
